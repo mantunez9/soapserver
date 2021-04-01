@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.soapserver.isdcm" xmlns:tns="http://ws.soapserver.isdcm"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="findVideoByTittleRequest" type="tns:findVideoByTittleRequest"/>
+    <xs:element name="findVideoByAuthorRequest" type="tns:findVideoByAuthorRequest"/>
+
+    <xs:element name="videoResponse" type="tns:videoResponse"/>
+
+    <xs:complexType name="findVideoByTittleRequest">
+        <xs:sequence>
+            <xs:element name="tittle" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="findVideoByAuthorRequest">
+        <xs:sequence>
+            <xs:element name="author" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="videoResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:videoDTO" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="videoDTO">
+        <xs:sequence>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="creationDate" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="duration" type="xs:string"/>
+            <xs:element name="format" type="xs:string"/>
+            <xs:element name="reproduction" type="xs:int"/>
+            <xs:element name="tittle" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+            <xs:element name="videoId" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+
