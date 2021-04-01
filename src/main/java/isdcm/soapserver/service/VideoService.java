@@ -10,4 +10,6 @@ public interface VideoService {
 
     List<VideoDTO> findVideoByAuthor(String author);
 
+    List<VideoDTO> findVideoByDate(String year, String month, String day);
+
 }

@@ -2,6 +2,7 @@ package isdcm.soapserver.endpoints;
 
 import isdcm.soapserver.service.VideoService;
 import isdcm.soapserver.ws.FindVideoByAuthorRequest;
+import isdcm.soapserver.ws.FindVideoByDateRequest;
 import isdcm.soapserver.ws.FindVideoByTittleRequest;
 import isdcm.soapserver.ws.VideoResponse;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -36,6 +37,16 @@ public class VideoEndPoint {
         VideoResponse response = new VideoResponse();
         response.set_return(videoService.findVideoByAuthor(request.getAuthor()));
         QName qname = new QName("findVideoByAuthorRequest");
+        return new JAXBElement<>(qname, VideoResponse.class, response);
+    }
+
+
+    @PayloadRoot(namespace = NAMESPACE, localPart = "findVideoByDateRequest")
+    @ResponsePayload
+    public JAXBElement<VideoResponse> findVideoByDate(@RequestPayload FindVideoByDateRequest request) {
+        VideoResponse response = new VideoResponse();
+        response.set_return(videoService.findVideoByDate(request.getYear(),request.getMonth(),request.getDay()));
+        QName qname = new QName("findVideoByDateRequest");
         return new JAXBElement<>(qname, VideoResponse.class, response);
     }
 

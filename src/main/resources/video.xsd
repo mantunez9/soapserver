@@ -4,7 +4,7 @@
 
     <xs:element name="findVideoByTittleRequest" type="tns:findVideoByTittleRequest"/>
     <xs:element name="findVideoByAuthorRequest" type="tns:findVideoByAuthorRequest"/>
-
+    <xs:element name="findVideoByDateRequest" type="tns:findVideoByDateRequest"/>
     <xs:element name="videoResponse" type="tns:videoResponse"/>
 
     <xs:complexType name="findVideoByTittleRequest">
@@ -16,6 +16,14 @@
     <xs:complexType name="findVideoByAuthorRequest">
         <xs:sequence>
             <xs:element name="author" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="findVideoByDateRequest">
+        <xs:sequence>
+            <xs:element default="2021" name="year" type="xs:string"/>
+            <xs:element default="01" name="month" type="xs:string"/>
+            <xs:element default="01" name="day" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

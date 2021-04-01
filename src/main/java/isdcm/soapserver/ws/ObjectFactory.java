@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.04.01 a las 02:37:18 PM CEST 
+// Generado el: 2021.04.01 a las 03:16:31 PM CEST 
 //
 
 
@@ -34,6 +34,7 @@ public class ObjectFactory {
     private final static QName _VideoResponse_QNAME = new QName("http://ws.soapserver.isdcm", "videoResponse");
     private final static QName _FindVideoByAuthorRequest_QNAME = new QName("http://ws.soapserver.isdcm", "findVideoByAuthorRequest");
     private final static QName _FindVideoByTittleRequest_QNAME = new QName("http://ws.soapserver.isdcm", "findVideoByTittleRequest");
+    private final static QName _FindVideoByDateRequest_QNAME = new QName("http://ws.soapserver.isdcm", "findVideoByDateRequest");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: isdcm.soapserver.ws
@@ -64,6 +65,14 @@ public class ObjectFactory {
      */
     public FindVideoByTittleRequest createFindVideoByTittleRequest() {
         return new FindVideoByTittleRequest();
+    }
+
+    /**
+     * Create an instance of {@link FindVideoByDateRequest }
+     * 
+     */
+    public FindVideoByDateRequest createFindVideoByDateRequest() {
+        return new FindVideoByDateRequest();
     }
 
     /**
@@ -99,6 +108,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.soapserver.isdcm", name = "findVideoByTittleRequest")
     public JAXBElement<FindVideoByTittleRequest> createFindVideoByTittleRequest(FindVideoByTittleRequest value) {
         return new JAXBElement<FindVideoByTittleRequest>(_FindVideoByTittleRequest_QNAME, FindVideoByTittleRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindVideoByDateRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.soapserver.isdcm", name = "findVideoByDateRequest")
+    public JAXBElement<FindVideoByDateRequest> createFindVideoByDateRequest(FindVideoByDateRequest value) {
+        return new JAXBElement<FindVideoByDateRequest>(_FindVideoByDateRequest_QNAME, FindVideoByDateRequest.class, null, value);
     }
 
 }
