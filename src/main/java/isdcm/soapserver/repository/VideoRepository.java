@@ -13,6 +13,6 @@ public interface VideoRepository extends JpaRepository<Video, Integer> {
 
     List<Video> findAllVideoByAuthor(@Param("author") String author);
 
-    List<Video> findAllVideoByCreationDateAfter(@Param("creationDate") LocalDateTime creationDate);
+    List<Video> findAllVideoByCreationDateGreaterThanEqual(@Param("creationDate") LocalDateTime creationDate);
 
 }

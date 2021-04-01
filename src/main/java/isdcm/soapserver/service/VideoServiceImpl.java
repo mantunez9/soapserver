@@ -32,7 +32,7 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public List<VideoDTO> findVideoByDate(String year, String month, String day) {
         LocalDateTime dateTime = LocalDateTime.of(Integer.parseInt(year), Integer.parseInt((StringUtils.isNotBlank(month) ? month : "01")), Integer.parseInt((StringUtils.isNotBlank(day) ? day : "01")), 0, 0);
-        List<Video> videoList = videoRepository.findAllVideoByCreationDateAfter(dateTime);
+        List<Video> videoList = videoRepository.findAllVideoByCreationDateGreaterThanEqual(dateTime);
         return getVideoDTOList(videoList);
     }
 
