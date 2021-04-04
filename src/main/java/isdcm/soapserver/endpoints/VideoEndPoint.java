@@ -22,6 +22,15 @@ public class VideoEndPoint {
 
     public VideoEndPoint(VideoService videoService) {this.videoService = videoService;}
 
+    @PayloadRoot(namespace = NAMESPACE, localPart = "findAllVideoRequest")
+    @ResponsePayload
+    public JAXBElement<VideoResponse> findAllVideo() {
+        VideoResponse response = new VideoResponse();
+        response.set_return(videoService.findAllVideo());
+        QName qname = new QName("findVideoByTittleRequest");
+        return new JAXBElement<>(qname, VideoResponse.class, response);
+    }
+
     @PayloadRoot(namespace = NAMESPACE, localPart = "findVideoByTittleRequest")
     @ResponsePayload
     public JAXBElement<VideoResponse> findVideoByTittle(@RequestPayload FindVideoByTittleRequest request) {

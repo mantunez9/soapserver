@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface VideoService {
 
+    List<VideoDTO> findAllVideo();
+
     List<VideoDTO> findVideoByTitle(String title);
 
     List<VideoDTO> findVideoByAuthor(String author);

@@ -18,6 +18,12 @@ public class VideoServiceImpl implements VideoService {
     public VideoServiceImpl(VideoRepository videoRepository) {this.videoRepository = videoRepository;}
 
     @Override
+    public List<VideoDTO> findAllVideo() {
+        List<Video> videoList = videoRepository.findAll();
+        return getVideoDTOList(videoList);
+    }
+
+    @Override
     public List<VideoDTO> findVideoByTitle(String title) {
         List<Video> videoList = videoRepository.findAllVideoByTittle(title);
         return getVideoDTOList(videoList);

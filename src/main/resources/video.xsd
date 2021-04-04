@@ -2,10 +2,13 @@
 <xs:schema version="1.0" targetNamespace="http://ws.soapserver.isdcm" xmlns:tns="http://ws.soapserver.isdcm"
            xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
+    <xs:element name="findAllVideoRequest" type="tns:findAllVideoRequest"/>
     <xs:element name="findVideoByTittleRequest" type="tns:findVideoByTittleRequest"/>
     <xs:element name="findVideoByAuthorRequest" type="tns:findVideoByAuthorRequest"/>
     <xs:element name="findVideoByDateRequest" type="tns:findVideoByDateRequest"/>
     <xs:element name="videoResponse" type="tns:videoResponse"/>
+
+    <xs:complexType name="findAllVideoRequest"/>
 
     <xs:complexType name="findVideoByTittleRequest">
         <xs:sequence>
