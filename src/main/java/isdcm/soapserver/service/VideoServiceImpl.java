@@ -57,7 +57,7 @@ public class VideoServiceImpl implements VideoService {
             videoDTO.setCreationDate(String.valueOf(video.getCreationDate()));
             videoDTO.setFormat(video.getFormat());
             videoDTO.setUrl(video.getUrl());
-            video.setReproduction(video.getReproduction());
+            videoDTO.setReproduction(video.getReproduction());
             videoDTOList.add(videoDTO);
 
         }
